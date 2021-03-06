@@ -33,7 +33,7 @@ def is_circular_prime(n):
 		return 1
 
 def main():
-	print "Running circularPrimes.py... \n"
+	print(f"Running circularPrimes.py... \n")
 	logging.basicConfig(level=logging.INFO)
 	#logging.basicConfig(level=logging.DEBUG)
 
@@ -46,14 +46,14 @@ def main():
 	logging.debug("is_digit_even(%d) = %d", number, is_digit_even(number))
 	logging.debug("is_circular_prime(%d) = %d", number, is_circular_prime(number))
 	
-	limit = 100
-	#limit = 1000000
+	#limit = 100
+	limit = 1000000
 	result_list = []
 	for number in range(10, limit):
 		if is_circular_prime(number):
 			result_list.append(number)
 
 	logging.info("RESULTS: {}".format(' '.join(map(str, result_list))))
-	print "ANSWER = ", len(result_list) + 4 #Add 4 as this does account for circular primes < 10    	
+	print(f"ANSWER = {len(result_list) + 4}") #Add 4 as this does account for circular primes < 10    	
 
 main()

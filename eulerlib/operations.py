@@ -1,12 +1,14 @@
+import sys
+
 def num_digits(n):
 	"""Function returns the number of digits in the n i.e num_digits(589) = 3"""
 	output = 1
 	number = n
 	#Use // to get around number overflow issue
 	#https://stackoverflow.com/questions/27946595/how-to-manage-division-of-huge-numbers-in-python
-	while(int(number//10) != 0) :
-		output+=1
-		number = int(number//10)
+	while(int(number // 10) != 0) :
+		output += 1
+		number = int(number // 10)
 	return output   
 
 def get_list_of_digits(n):
@@ -15,7 +17,7 @@ def get_list_of_digits(n):
 	numerator = 1
 	while(len(output_list) < num_digits):
 		numerator = numerator * 10
-		digit = int(numerator/n)
+		digit = int(numerator // n)
 		if(numerator > n) : numerator = (numerator) - (n * digit)
 		output_list.append(digit)
 	#print(output_list)
@@ -23,7 +25,9 @@ def get_list_of_digits(n):
 
 def is_prime(n):
 	"""Function returns 1 when number is prime and 0 if it is not"""
-	for i in range(2, n / 2) :
+	limit = (n ** (1/2)) + 1
+	#print("is_prime(" + n + ") : limit = " + limit)
+	for i in range(2, int(limit)) :
 		if(n % i == 0):
 			return 0
 	return 1
@@ -42,7 +46,7 @@ def last_digit(n):
 	operand = n
 	while operand != 0:
 		last_digit = operand % 10
-		operand = operand / 10
+		operand = operand // 10
 	return last_digit
 
 def rotate_number(n):
@@ -61,7 +65,7 @@ def does_number_have_zero(n):
 		#print "\nOperand = ", operand
 		if operand % 10 == 0:
 			return 1
-		operand = operand/10
+		operand = operand // 10
 	return 0
 
 def is_number_even(n):
@@ -77,5 +81,20 @@ def is_digit_even(n):
 	while operand != 0:
 		if operand % 2 == 0:
 			return 1
-		operand = operand / 10
+		operand = operand // 10
 	return 0
+
+def py_version():
+	print("Python version")
+	print (sys.version)
+	print("Version info.")
+	print (sys.version_info)
+
+def main():
+	
+	test_number = 99
+	#print('is_prime(' + (str)test_number + ') ='  + (str)is_prime(99))
+	print(f'is_prime({test_number}) = {is_prime(test_number)}')
+	print(f'Hello {test_number}')
+
+#main()
