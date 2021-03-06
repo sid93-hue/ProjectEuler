@@ -10,16 +10,16 @@ def num_digits(n):
 	return output   
 
 def get_list_of_digits(n):
-    """Return list containing digits of the number"""
-    output_list = []
-    numerator = 1
-    while(len(output_list) < num_digits):
-        numerator = numerator * 10
-        digit = int(numerator/n)
-        if(numerator > n) : numerator = (numerator) - (n * digit)
-        output_list.append(digit)
-    #print(output_list)
-    return output_list 
+	"""Return list containing digits of the number"""
+	output_list = []
+	numerator = 1
+	while(len(output_list) < num_digits):
+		numerator = numerator * 10
+		digit = int(numerator/n)
+		if(numerator > n) : numerator = (numerator) - (n * digit)
+		output_list.append(digit)
+	#print(output_list)
+	return output_list 
 
 def is_prime(n):
 	"""Function returns 1 when number is prime and 0 if it is not"""
