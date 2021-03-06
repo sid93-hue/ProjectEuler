@@ -1,11 +1,25 @@
 def num_digits(n):
 	"""Function returns the number of digits in the n i.e num_digits(589) = 3"""
-	num_digits = 0
-	operand = n
-	while operand != 0:
-		num_digits += 1
-		operand = operand / 10
-	return num_digits
+	output = 1
+	number = n
+	#Use // to get around number overflow issue
+	#https://stackoverflow.com/questions/27946595/how-to-manage-division-of-huge-numbers-in-python
+	while(int(number//10) != 0) :
+		output+=1
+		number = int(number//10)
+	return output   
+
+def get_list_of_digits(n):
+    """Return list containing digits of the number"""
+    output_list = []
+    numerator = 1
+    while(len(output_list) < num_digits):
+        numerator = numerator * 10
+        digit = int(numerator/n)
+        if(numerator > n) : numerator = (numerator) - (n * digit)
+        output_list.append(digit)
+    #print(output_list)
+    return output_list 
 
 def is_prime(n):
 	"""Function returns 1 when number is prime and 0 if it is not"""
@@ -13,6 +27,14 @@ def is_prime(n):
 		if(n % i == 0):
 			return 0
 	return 1
+
+def get_list_of_primes(n):
+	"""Function returns list of primes <= n"""    
+	output_list = [1]
+	for i in range(2, n + 1):
+		if(is_prime(i)):
+			output_list.append(i)
+	return output_list
 
 def last_digit(n):
 	"""Function returns the highest digit in n i.e last_digit(589) = 5"""
