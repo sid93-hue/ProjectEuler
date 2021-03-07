@@ -1,1 +1,1 @@
-ProjectEuler solutions sets : https://projecteuler.net/
+ProjectEuler solution sets : https://projecteuler.net/
