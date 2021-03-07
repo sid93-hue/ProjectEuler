@@ -14,31 +14,13 @@ def num_digits(n):
 def get_list_of_digits(n):
 	"""Return list containing digits of the number"""
 	output_list = []
-	numerator = 1
-	while(len(output_list) < num_digits):
-		numerator = numerator * 10
-		digit = int(numerator // n)
-		if(numerator > n) : numerator = (numerator) - (n * digit)
+	operand = n
+	while operand != 0:
+		digit = operand % 10
 		output_list.append(digit)
+		operand = operand // 10
 	#print(output_list)
 	return output_list 
-
-def is_prime(n):
-	"""Function returns 1 when number is prime and 0 if it is not"""
-	limit = (n ** (1/2)) + 1
-	#print("is_prime(" + n + ") : limit = " + limit)
-	for i in range(2, int(limit)) :
-		if(n % i == 0):
-			return 0
-	return 1
-
-def get_list_of_primes(n):
-	"""Function returns list of primes <= n"""    
-	output_list = [1]
-	for i in range(2, n + 1):
-		if(is_prime(i)):
-			output_list.append(i)
-	return output_list
 
 def last_digit(n):
 	"""Function returns the highest digit in n i.e last_digit(589) = 5"""
@@ -49,14 +31,9 @@ def last_digit(n):
 		operand = operand // 10
 	return last_digit
 
-def rotate_number(n):
-	"""Functions returns the rotated value of n i.e rotate_number(589) = 895"""
-	operand = n
-	num_digits_n = num_digits(n)
-	operand = operand * 10
-	operand = operand % (10 ** num_digits_n)
-	operand = operand + last_digit(n)
-	return operand
+def first_digit(n):
+	"""Function returns the lowest digit in n i.e first_digit(589) = 9"""
+	return n % 10
 
 def does_number_have_zero(n):
 	"""Function returns 1 if n has a 0 in its digits i.e does_number_have_zero(5089) == 1"""
@@ -84,17 +61,35 @@ def is_digit_even(n):
 		operand = operand // 10
 	return 0
 
+def is_prime(n):
+	"""Function returns 1 when number is prime and 0 if it is not"""
+	limit = (n ** (1/2)) + 1
+	#print("is_prime(" + n + ") : limit = " + limit)
+	for i in range(2, int(limit)) :
+		if(n % i == 0):
+			return 0
+	return 1
+
+def get_list_of_primes(n):
+	"""Function returns list of primes <= n"""    
+	output_list = []
+	for i in range(2, n + 1):
+		if(is_prime(i)):
+			output_list.append(i)
+	return output_list
+
+def rotate_number(n):
+	"""Functions returns the rotated value of n i.e rotate_number(589) = 895"""
+	operand = n
+	num_digits_n = num_digits(n)
+	operand = operand * 10
+	operand = operand % (10 ** num_digits_n)
+	operand = operand + last_digit(n)
+	return operand
+
 def py_version():
 	print("Python version")
 	print (sys.version)
 	print("Version info.")
 	print (sys.version_info)
 
-def main():
-	
-	test_number = 99
-	#print('is_prime(' + (str)test_number + ') ='  + (str)is_prime(99))
-	print(f'is_prime({test_number}) = {is_prime(test_number)}')
-	print(f'Hello {test_number}')
-
-#main()
