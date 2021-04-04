@@ -87,6 +87,20 @@ def rotate_number(n):
 	operand = operand + last_digit(n)
 	return operand
 
+def is_perfect_square(n):
+	""" Returns True is number is perfect square. False otherwise """
+	if (int(n**(1/2)))**2 == n:
+		return True
+	else :
+		return False
+
+def is_right_triangle(a ,b, c):
+	""" Returns True if a,b,c form the sides of a right triangle """
+	if (a**2) + (b**2) == (c**2):
+		return True
+	else :
+		return False
+
 def py_version():
 	print("Python version")
 	print (sys.version)
