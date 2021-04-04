@@ -1,6 +1,6 @@
 """Problem 37"""
 
-from eulerlib.operations import *
+from eulerlib.operations import first_digit, last_digit, is_prime, get_list_of_digits
 
 def truncated_digits_l2r(n):
 	"""Returns list of truncated numbers left -> right i.e truncated_digits_l2r(3797) returns [3797, 797, 97, 7]"""

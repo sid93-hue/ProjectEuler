@@ -1,8 +1,8 @@
 """Problem 27"""
-from eulerlib.operations import *
+from eulerlib.operations import is_prime, get_list_of_primes
 
 def get_prime_score(a,b):
-    score = 0;
+    score = 0
     for n in range(0, b):
         if(is_prime((n*n) + (a*n) + b)):
             score += 1

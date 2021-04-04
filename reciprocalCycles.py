@@ -1,7 +1,7 @@
 """Problem 26"""
 
 from collections import defaultdict
-from eulerlib.operations import *
+from eulerlib.operations import get_list_of_digits
 
 num_digits = 1000
 

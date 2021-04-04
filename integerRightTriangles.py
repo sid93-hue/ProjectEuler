@@ -1,6 +1,6 @@
 print(f"Hello World!")
 
-from eulerlib.operations import *
+from eulerlib.operations import is_perfect_square
 
 def len_hypotenuse(a, b):
 	""" Returns the (int) length of the hypotenuse """

@@ -1,6 +1,6 @@
 """Problem 25"""
 
-from eulerlib.operations import *
+from eulerlib.operations import num_digits
 
 def main():
     
