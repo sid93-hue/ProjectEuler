@@ -67,8 +67,26 @@ def is_prime(n):
 	#print("is_prime(" + n + ") : limit = " + limit)
 	for i in range(2, int(limit)) :
 		if(n % i == 0):
-			return 0
-	return 1
+			return False
+	return True
+
+def get_list_of_primes_sieve(n):
+	""" Returns list of prime numbers <=n using optimized sieve method """ 
+	return_list = [i for i in range(2, n+1)]
+	iteration_list = [i for i in range(2, n+1)]
+	for item in iteration_list:
+		if item % 2 == 0 :
+			return_list.remove(item)
+		elif item % 3 == 0:
+			return_list.remove(item)
+		elif item % 5 == 0:
+			return_list.remove(item)
+		elif item % 7 == 0:
+			return_list.remove(item)
+		elif not is_prime(item):
+			return_list.remove(item)
+	return_list = [2, 3, 5, 7] + return_list
+	return return_list
 
 def get_list_of_primes(n):
 	"""Function returns list of primes <= n"""    
