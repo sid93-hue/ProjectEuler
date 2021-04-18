@@ -119,6 +119,33 @@ def is_right_triangle(a ,b, c):
 	else :
 		return False
 
+def factorial(n):
+	""" Returns factorial of n """
+	if n == 0:
+		return 1
+	if n == 1:
+		return 1
+	if n == 2:
+		return 2
+	if n == 3:
+		return 6
+	if n == 4:
+		return 24
+	if n == 5:
+		return 120
+	if n == 6:
+		return 720
+	if n == 7:
+		return 5040
+	if n == 8:
+		return 40320
+	if n == 9:
+		return 362880
+	result = 1
+	for i in range(2, n + 1):
+		result = result * i
+	return result
+
 def py_version():
 	print("Python version")
 	print (sys.version)
