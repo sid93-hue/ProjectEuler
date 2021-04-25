@@ -1,7 +1,7 @@
 """Problem 31"""
 
 def ways(n):
-    """Returns number of ways total can be achieved using given coin denominations """
+    """Returns number of ways total can be achieved using given coin denominations (dynamic programming) """
     coins = [0, 1, 2, 5, 10, 20, 50, 100, 200]
     
     """ result array is 2D. First index for available coins and second index for total"""
