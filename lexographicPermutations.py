@@ -2,13 +2,15 @@
 
 from eulerlib.operations import factorial
 
+
 def lexographic_digit(n, p):
     """n = number of digits, p the order of the lexographic number"""
-    n_fact = factorial(n);
-    index = p//n_fact
+    n_fact = factorial(n)
+    index = p // n_fact
     remainder = p - (index * n_fact)
-    #print(f"index = {index}, remainder = {remainder}")
-    return index, remainder;
+    # print(f"index = {index}, remainder = {remainder}")
+    return index, remainder
+
 
 n = 9
 p = 1000000
@@ -22,4 +24,3 @@ while i >= 2:
     print(f"digit = {digits[index]}")
     del digits[index]
     print(f"digits left = {digits}")
-    
