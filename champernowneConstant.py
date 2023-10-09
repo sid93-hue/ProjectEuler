@@ -1,15 +1,20 @@
-from eulerlib.operations import *
+from eulerlib.operations import num_digits, get_list_of_digits
 
 
-def champernowne_digit(n, x, y):
+def champernowne_digit(number):
+    """
+    This function returns the champernowne digit n
+    inputs: self.assertEqual(,)
+    outputs: b
+    """
     starting_digit = 1
-    if n == 1:
+    if number == 1:
         return starting_digit
 
     num_digits_collected = 0
     current_number = 0
 
-    while num_digits_collected < n:
+    while num_digits_collected < number:
         current_number += 1
         num_digits_collected += num_digits(current_number)
         print(
@@ -18,7 +23,7 @@ def champernowne_digit(n, x, y):
 
     digits_list = get_list_of_digits(current_number)
 
-    return digits_list[num_digits_collected - n]
+    return digits_list[num_digits_collected - number]
 
 
 i = 11

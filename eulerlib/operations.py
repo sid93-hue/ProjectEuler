@@ -15,9 +15,11 @@ def num_digits(n):
     return output
 
 
-def get_list_of_digits(n):
+def get_list_of_digits(n : int):
     """
     Return list containing digits of the number
+    Input: number n
+    Output: list of digits
     """
     output_list = []
     operand = n
@@ -93,6 +95,21 @@ def is_prime(n):
         if n % i == 0:
             return False
     return True
+
+def get_nth_prime_number(n):
+    """
+    Function that returs the nth prime number
+    """
+    if n == 0:
+        raise Exception("Index 0 given to get_nth_prime_number!")
+    start = 1
+    for idx in range(n):
+        start = start + 1
+        while not is_prime(start):
+            start = start + 1
+    return start
+
+
 
 
 def get_list_of_primes_sieve(n):
@@ -194,3 +211,13 @@ def py_version():
     print(sys.version)
     print("Version info.")
     print(sys.version_info)
+
+
+def list2num(l:list):
+    """
+    Returns the number given a list of digits
+    """
+    num = 0
+    for digit in l:
+        num = (num * 10) + digit
+    return num
